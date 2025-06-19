@@ -1,4 +1,42 @@
-1. Data Exploration and Processing:
+# 📊 Superstore Sales Analysis - Exploratory Data Analysis
+
+## 📑 Table of Contents
+
+1. [🔍 Data Exploration and Processing](#-data-exploration-and-processing)
+   - [Importing Libraries](#importing-necessary-libraries)
+   - [Reading the Dataset](#reading-the-dataset)
+   - [Data Shape and Info](#checking-the-shape-of-dataset)
+   - [Missing Values Analysis](#data-type-and-missing-values-of-each-column)
+   - [Descriptive Statistics](#descriptive-statistics)
+
+2. [📈 Sales Analysis](#-sales-analysis)
+   - [Total Sales Overview](#total-sales-overview)
+   - [Sales by Category](#sales-by-category)
+   - [Sales by Region](#sales-by-region)
+   - [Monthly Sales Trends](#monthly-sales-trends)
+   - [Top Selling Products](#top-selling-products)
+
+3. [👥 Customer Analysis](#-customer-analysis)
+   - [Customer Segments](#customer-segments)
+   - [Customer Purchase Patterns](#customer-purchase-patterns)
+   - [Repeat Customer Analysis](#repeat-customer-analysis)
+
+4. [💰 Profitability Analysis](#-profitability-analysis)
+   - [Profit by Category](#profit-by-category)
+   - [Profit by Region](#profit-by-region)
+   - [Discount Impact on Profitability](#discount-impact-on-profitability)
+   - [Loss Analysis](#loss-analysis)
+
+5. [🎯 Advanced Analytics](#-advanced-analytics)
+   - [Correlation Analysis](#correlation-analysis)
+   - [Shipping Analysis](#shipping-analysis)
+   - [Performance Metrics](#performance-metrics)
+
+6. [📋 Key Insights and Conclusions](#-key-insights-and-conclusions)
+
+---
+
+## 🔍 Data Exploration and Processing:
 
 .Importing Necessary Libraries
 
