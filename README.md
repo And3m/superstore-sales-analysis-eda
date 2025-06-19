@@ -3,42 +3,34 @@
 ## 📑 Table of Contents
 
 1. [🔍 Data Exploration and Processing](#-data-exploration-and-processing)
-   - [Importing Libraries](#importing-necessary-libraries)
+   - [Importing Necessary Libraries](#importing-necessary-libraries)
    - [Reading the Dataset](#reading-the-dataset)
-   - [Data Shape and Info](#checking-the-shape-of-dataset)
-   - [Missing Values Analysis](#data-type-and-missing-values-of-each-column)
-   - [Descriptive Statistics](#descriptive-statistics)
+   - [Checking the Shape of Dataset](#checking-the-shape-of-dataset)
+   - [Data Type and Missing Values](#data-type-and-missing-values-of-each-column)
+   - [Checking for Duplicate Rows](#checking-of-duplicate-rows)
 
-2. [📈 Sales Analysis](#-sales-analysis)
-   - [Total Sales Overview](#total-sales-overview)
-   - [Sales by Category](#sales-by-category)
-   - [Sales by Region](#sales-by-region)
-   - [Monthly Sales Trends](#monthly-sales-trends)
-   - [Top Selling Products](#top-selling-products)
+2. [📊 Statistical Summary](#-statistical-summary)
+   - [Statistical Summary of Numerical Columns](#statistical-summary-of-numerical-columns)
+   - [Statistical Summary of Categorical Columns](#statistical-summary-of-categorical-columns)
 
-3. [👥 Customer Analysis](#-customer-analysis)
-   - [Customer Segments](#customer-segments)
-   - [Customer Purchase Patterns](#customer-purchase-patterns)
-   - [Repeat Customer Analysis](#repeat-customer-analysis)
+3. [📈 Non-Graphical Analysis](#-non-graphical-analysis)
+   - [Unique Attributes and Counts](#unique-attributes-and-count-of-all-categorical-variables)
 
-4. [💰 Profitability Analysis](#-profitability-analysis)
-   - [Profit by Category](#profit-by-category)
-   - [Profit by Region](#profit-by-region)
-   - [Discount Impact on Profitability](#discount-impact-on-profitability)
-   - [Loss Analysis](#loss-analysis)
+4. [📉 Graphical Analysis](#-graphical-analysis)
+   - [Univariate Analysis - Numerical Features](#univariate-analysis---numerical-features)
+   - [Univariate Analysis - Categorical Features](#univariate-analysis---categorical-features)
 
-5. [🎯 Advanced Analytics](#-advanced-analytics)
-   - [Correlation Analysis](#correlation-analysis)
-   - [Shipping Analysis](#shipping-analysis)
-   - [Performance Metrics](#performance-metrics)
-
-6. [📋 Key Insights and Conclusions](#-key-insights-and-conclusions)
+5. [🔗 Bivariate Analysis](#-bivariate-analysis)
+   - [Sales vs Category/Sub-Category](#sales-vs-category--sub-category)
+   - [Profit vs Discount](#profit-vs-discount)
+   - [Profit vs Sales](#profit-vs-sales)
+   - [Profit vs Category/Sub-Category](#profit-vs-categorysub-category)
 
 ---
 
 ## 🔍 Data Exploration and Processing:
 
-.Importing Necessary Libraries
+### Importing Necessary Libraries
 
 
 ```python
@@ -56,7 +48,7 @@ warnings.filterwarnings('ignore')
 sns.set(style='whitegrid')
 ```
 
-.Reading the Dataset
+### Reading the Dataset
 
 
 ```python
@@ -194,7 +186,7 @@ df.head(3)
 
 
 
-Checking the shape of Dataset
+### Checking the Shape of Dataset
 
 
 ```python
@@ -204,7 +196,7 @@ print("Data Shape: ", df.shape)
     Data Shape:  (9994, 21)
     
 
-Data Type and Missing Values of Each Column
+### Data Type and Missing Values of Each Column
 
 
 ```python
@@ -241,7 +233,7 @@ df.info()
     memory usage: 1.6+ MB
     
 
-Checking of Duplicate Rows
+### Checking of Duplicate Rows
 
 
 ```python
@@ -263,9 +255,9 @@ df['Ship Date'] = pd.to_datetime(df['Ship Date'])
 df['Delivery Delay (Days)'] = (df['Ship Date'] - df['Order Date']).dt.days
 ```
 
-2. Statistical Summary
+## 📊 Statistical Summary
 
-Statistical Summary of Numerical Columns
+### Statistical Summary of Numerical Columns
 
 
 ```python
@@ -414,7 +406,7 @@ From above statistical description we can see that Sales and Profit columns have
 Sales, Quantity, and Discount columns are right skewed.
 The Data is very sparsed in the lowest and highest 25 percentiles of the Profit column.
 
-Statistical Summary of Categorical Columns
+### Statistical Summary of Categorical Columns
 
 
 ```python
@@ -532,9 +524,9 @@ Notes:
 There is only 1 unique value in the Country column i.e. United States
 The top row shows the most frequent values in each column.
 
-3. Non-Graphical Analysis
+## 📈 Non-Graphical Analysis
 
-Unique attributes and count of all Categorical Variables
+### Unique Attributes and Count of All Categorical Variables
 
 
 ```python
@@ -732,9 +724,9 @@ for col in cat_columns:
     
     
 
-4. Graphical Analysis
+## 📉 Graphical Analysis
 
-Univariate Analysis - Numerical Features
+### Univariate Analysis - Numerical Features
 
 
 ```python
@@ -785,7 +777,7 @@ Note:
 Sales, Quantity, and Discount columns are right skewed.
 The Data is very sparsed in the lowest and highest 25 percentiles of the Profit column.
 
-Univariate Analysis - Categorical Features
+### Univariate Analysis - Categorical Features
 
 
 ```python
@@ -813,12 +805,12 @@ Region-wise highest Number of Orders are comming from the West region followed b
 Segment-wise highest Number of Orders are comming from the Conusmer segment followed by Corporate and Home Office.
 Ship Mode-wise highest Number of Orders are comming through the Standard Class Ship mode followed by Second Class, First Class and Same Day.
 
-5. Bivariate Analysis
+## 🔗 Bivariate Analysis
 
 Exploring how different features affect Sales/Profit¶
 
 
-Sales vs Category / Sub-Category:
+### Sales vs Category / Sub-Category
 
 
 ```python
@@ -863,7 +855,7 @@ Technology is the top selling category with total sales of $836,154.
 
 Phones, Chairs and Storage are the top 3 selling Sub_Category with total sales of USD 330007, USD 328449, and USD 223844 respectively.
 
-Profit vs Discount:
+### Profit vs Discount
 
 
 ```python
@@ -886,7 +878,7 @@ Overall Profit and discount shows negative Correlation.
 Discount value of 0.1 to 0.4 result into both profit and loss.
 Discount value of above 0.4 has no profit but loss.
 
-Profit Vs Sales
+### Profit vs Sales
 
 
 ```python
@@ -907,7 +899,7 @@ Note:
 
 Profit and Sales has no corrrelation.
 
-Profit Vs Category/Sub-Category
+### Profit vs Category/Sub-Category
 
 
 ```python
